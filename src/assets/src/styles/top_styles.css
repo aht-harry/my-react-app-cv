@@ -1,0 +1,116 @@
+.dong-top{
+    background: #fff2e2;
+    height: 300px;
+}
+.cv-chia-cot{
+    display: flex;
+    position: relative;
+    clear: both;
+}
+#anh_bg_2{
+    width: 180px;
+    height: 180px;
+    display: inline-block;
+    background: url("/src/assets/src/images/1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: -23px;
+    top: -25px;
+    z-index: 1;
+}
+#anh_bg_1{
+    width: 350px;
+    height: 100%;
+    display: inline-block;
+    background: url("/src/assets/src/images/6.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+#click_upload{
+    margin-left: 70px;
+    margin-top: 50px;
+}
+.cv-cot-trai{
+    width: 300px;
+    display: inline-block;
+    margin-right: 0;
+    padding: 0 25px;
+}
+.avatar-user{
+    display: inline-block;
+    padding-bottom: 35px;
+    margin-left: 55px;
+    margin-top: 50px;
+}
+.wimgS{
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+#cvo-profile-avatar{
+    width: 200px;
+    border-top-left-radius: 0;
+}
+.icon-pic{
+    cursor: pointer;
+    font-size: 50px;
+    display: none;
+    position: absolute;
+    color: #fff;
+    top: 40%;
+    left: 42.4%;
+    z-index: 10;
+}
+
+
+.cv-cot-phai{
+    width: calc(100% - 300px);
+    padding-left: 0;
+    display: inline-block;
+    position: relative;
+}
+.box-ten{
+    margin-top: 95px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    text-align: left;
+}
+#cv-profile-fullname{
+    text-transform: uppercase;
+    font-size: 38px;
+    font-weight: bold;
+    color: #7a2f05;
+}
+[placeholder]:empty:before{
+    content: attr(placeholder);
+    color: #b9b1b1!important;
+
+}
+[contentEditable=true]{
+    min-height: 1em;
+    display: inline-block;
+    position: relative;
+    min-width: 25pt;
+    word-break: break-word;
+}
+#cv-profile-job{
+    color: #ff9900;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+#anh_bg_3{
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    background: url("../images/7.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
