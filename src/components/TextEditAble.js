@@ -1,6 +1,7 @@
 const TextEditAble = ({ id, placeholder, title }) => {
   return (
     <span
+      className="TextEditAble"
       //   id="cv-profile-fullname"
       id={id}
       placeholder={placeholder}

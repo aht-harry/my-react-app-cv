@@ -1,7 +1,22 @@
 import "../../assets/src/styles/top_styles.css";
 import Avatar from "../../assets/src/images/no_avatar.jpg";
 import TextEditAble from "../../components/TextEditAble";
+import { Container, Row, Col } from "react-bootstrap";
+import { useState } from "react";
 const Top = () => {
+  const [selectedImage, setSelectedImage] = useState(Avatar);
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setSelectedImage(reader.result);
+    };
+    reader.readAsDataURL(file);
+    event.target.value = "";
+
+  };
+
   return (
     <div className="cv-chia-cot dong-top">
       <div id="anh_bg_2"></div>
@@ -11,23 +26,24 @@ const Top = () => {
         title=""
         data-original-title="Chọn avatar"
       >
-        <div
-          id="click_upload"
-          style={{ width: "200px", height: "200px" }}
-        ></div>
-      </div>
-      <div className="cv-cot-trai">
-        <div className="avatar-user">
-          <div className="box-dm">
-            <div className="wimgS">
-              <div className="box-imgupload" style={{ position: "relative" }}>
-                <img src={Avatar} id="cvo-profile-avatar" />
-                <div className="icon-pic">
-                  <i className="fa fa-camera"></i>
-                </div>
-              </div>
+        <div id="click_upload" style={{ width: "200px", height: "200px" }}>
+          <input
+            type="file"
+            style={{ display: "none" }}
+            onChange={handleImageChange}
+            id="avatar-file-input"
+          />
+          <label htmlFor="avatar-file-input">
+            <img
+              src={selectedImage}
+              style={{ width: "200px", height: "200px" }}
+              id="cvo-profile-avatar"
+              alt="Avatar"
+            />
+            <div className="icon-pic">
+              <i className="fa fa-camera"></i>
             </div>
-          </div>
+          </label>
         </div>
       </div>
       <div className="cv-cot-phai">

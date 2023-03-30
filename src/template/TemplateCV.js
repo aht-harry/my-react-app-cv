@@ -1,17 +1,33 @@
 import React from 'react';
 import MainLeft from './components_template/MainCV/MainLeft';
 import Top from './components_template/Top';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function TemplateCV() {
   return (
     <div className="cv-content">
-      <Top />
-      <div className="cv-chia-cot contentt">
-        <div className="cv-cot-trai">
-          <div id="anh_bg_4"></div>
-          <MainLeft />
-        </div>
-      </div>
+      
+      <Container>
+        <Row>
+        <Col md={12}><Top /></Col>
+        </Row>
+        <Row>
+        <Col md={4}>
+            <Container>
+                <Row>
+                    <MainLeft />
+                </Row>
+            </Container>
+        </Col>
+        <Col md={8}>
+            <Container>
+                <Row>
+                    <MainLeft />
+                </Row>
+            </Container>
+        </Col>
+        </Row>
+      </Container>
     </div>
   )
 }

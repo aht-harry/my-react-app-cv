@@ -6,7 +6,7 @@ const MainLeft = () => {
     "Mong muốn tìm được chỗ làm ổn định lâu dài",
     "Mong muốn tìm được chỗ làm có cơ hội thăng tiến tốt",
     "Mong muốn tìm được chỗ làm có mức lương tốt",
-    "Mong muốn tìm được nơi có cơ hội cống hiến bản thân tốt"
+    "Mong muốn tìm được nơi có cơ hội cống hiến bản thân tốt",
   ];
   const listCheckboxSkill = [
     "Kỹ năng tổ chức",
@@ -19,19 +19,14 @@ const MainLeft = () => {
     "Dễ dàng thích nghi với môi trường mới",
     "Lập kế hoạch",
     "Giải quyết vấn đề",
-  ]
+  ];
   const listSkillDropDown = [
     "Ms Word",
     "Ms Excel",
     "Ms Power Point",
-    "Ms Outlook"
-  ]
-  const evaluateSkill = [
-    "Kém",
-    "Trung bình",
-    "Khá",
-    "Tốt"
-  ]
+    "Ms Outlook",
+  ];
+  const evaluateSkill = ["Kém", "Trung bình", "Khá", "Tốt"];
   return (
     <>
       <div className="muc-tieu-nghe-nghiep">
@@ -40,7 +35,7 @@ const MainLeft = () => {
           description={"Chọn mục tiêu nghề nghiệp"}
           listCheckbox={listCheckbox}
           modalTitle={"Những mục tiêu gợi ý cho bạn"}
-          stylePopup = {"textandcheckbox"}
+          stylePopup={"textandcheckbox"}
         />
       </div>
       <div className="ky-nang">
@@ -49,7 +44,7 @@ const MainLeft = () => {
           description={"Chọn kỹ năng"}
           listCheckbox={listCheckboxSkill}
           modalTitle={"Những kĩ năng gợi ý phù hợp với bạn"}
-          stylePopup = {"textandcheckbox"}
+          stylePopup={"textandcheckbox"}
         />
       </div>
       <div className="tin-học">
@@ -63,7 +58,9 @@ const MainLeft = () => {
       <div className="giai-thuong">
         <ComponentWithTextEditAble
           titleComponent={"giải thưởng"}
-          placeholder={"Nhân viên xuất sắc nhất năm 2020 tại Công Ty TNHH Eyeplus Online"}
+          placeholder={
+            "Nhân viên xuất sắc nhất năm 2020 tại Công Ty TNHH Eyeplus Online"
+          }
         />
       </div>
       <div className="chung-chi">

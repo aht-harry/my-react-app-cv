@@ -36,3 +36,43 @@
     transform: rotate(360deg);
   }
 }
+
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('https://fonts.cdnfonts.com/sf-pro-display') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 14px;
+}
+
+.cv-content{
+  text-align: left;
+}
+.TextEditAble{
+  display: block;
+  text-align: left;
+  width: 100%;
+}
+.TextEditAble:hover,.TextEditAble:focus {
+  outline: #77a5cc dashed 1pt;
+}
+span.title_box{
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #b66d3a;
+    font-size: 20px;
+}
+/* style modal */
+
+.modal-body label{
+  display: inline;
+  padding-left: 0.5em;
+}
+.modal-body textarea{
+  width: 100%;
+}
