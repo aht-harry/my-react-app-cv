@@ -1,14 +1,14 @@
 import TextEditAble from "./TextEditAble";
 
-const ComponentWithTextEditAble = ({ titleComponent }) => {
+const ComponentWithTextEditAble = (props) => {
   return (
     <div className="cv-part">
       <div className="cvp-box-child-list">
         <div className="cvp-title">
-          <span class="title_box">{titleComponent}</span>
+          <span class="title_box">{props.titleComponent}</span>
         </div>
         <div className="cvp-content">
-            <TextEditAble placeholder={"Toiec 700 điểm"} />
+            <TextEditAble placeholder={props.placeholder} />
         </div>
       </div>
     </div>
