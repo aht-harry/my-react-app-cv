@@ -18,10 +18,9 @@ const Top = () => {
   };
 
   return (
-    <div className="cv-chia-cot dong-top">
-      <div id="anh_bg_2"></div>
-      <div
-        id="anh_bg_1"
+    <Container>
+        <Row>
+          <Col md={4}><div
         data-toggle="tooltip"
         title=""
         data-original-title="Chọn avatar"
@@ -45,9 +44,8 @@ const Top = () => {
             </div>
           </label>
         </div>
-      </div>
-      <div className="cv-cot-phai">
-        <div className="box-ten">
+      </div></Col>
+          <Col md={8}><div className="box-ten">
           <div>
             <TextEditAble
               id={"cv-profile-fullname"}
@@ -62,10 +60,9 @@ const Top = () => {
               title={"Vị trí công việc bạn muốn ứng tuyển"}
             />
           </div>
-        </div>
-      </div>
-      <div id="anh_bg_3"></div>
-    </div>
+        </div></Col>
+        </Row>
+    </Container>
   );
 };
 export default Top;

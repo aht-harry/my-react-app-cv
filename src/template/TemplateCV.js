@@ -6,11 +6,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 function TemplateCV() {
   return (
     <div className="cv-content">
-      
+      <Top />
       <Container>
-        <Row>
-        <Col md={12}><Top /></Col>
-        </Row>
         <Row>
         <Col md={4}>
             <Container>
