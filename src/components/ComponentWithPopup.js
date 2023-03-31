@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import PopupWithDropDown from "./PopupWithDropDown";
 import PopupWithTextAndCheckbox from "./PopupWithTextAndCheckbox";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-
-
 
 const ComponentWithPopup = (props) => {
   const [show, setShow] = useState(false);
@@ -19,9 +17,9 @@ const ComponentWithPopup = (props) => {
 
   return (
     <>
-      <div className="cv-part" onClick={handleShow}>
+      <div className="cv-part">
         <div className="cvp-box-child-list">
-          <div className="cvp-title">
+          <div className="cvp-title" onClick={handleShow}>
             <span className="title_box">{props.titleComponent}</span>
             {props.icon ? (
               <button
@@ -42,32 +40,31 @@ const ComponentWithPopup = (props) => {
           </div>
           <div className="cvp-content">
             {
-
               console.log(data)
-            // (data.length > 0) ? (
-              
-            //   data.map((item,index) => (
-            //     <div key={index} className="cvp-box-child">
-            //       {/* <div className="fieldgroup_controls">
-            //         <div
-            //           className="remove delete-exp"
-            //           title="Xoá"
-            //           onClick={() => handleDeleteExperience(exp.id)}
-            //         >
-            //           Xóa {exp.id}
-            //         </div>
-            //       </div> */}
-            //       <div className="tlp-content">
-            //         <div className="tlp-content-left">
-            //             <p>{item.data}</p>
-            //         </div>
-            //       </div>
-            //     </div>
-            //   ))
-            // ) : (
-            //   <span>{props.description}</span>
-            // )
-          }
+              // (data.length > 0) ? (
+
+              //   data.map((item,index) => (
+              //     <div key={index} className="cvp-box-child">
+              //       {/* <div className="fieldgroup_controls">
+              //         <div
+              //           className="remove delete-exp"
+              //           title="Xoá"
+              //           onClick={() => handleDeleteExperience(exp.id)}
+              //         >
+              //           Xóa {exp.id}
+              //         </div>
+              //       </div> */}
+              //       <div className="tlp-content">
+              //         <div className="tlp-content-left">
+              //             <p>{item.data}</p>
+              //         </div>
+              //       </div>
+              //     </div>
+              //   ))
+              // ) : (
+              //   <span>{props.description}</span>
+              // )
+            }
           </div>
         </div>
       </div>

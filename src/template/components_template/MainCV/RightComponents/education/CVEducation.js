@@ -30,8 +30,8 @@ function CVEducation() {
 
   return (
     <div className="cv-part part-kinh-nghiem">
-      <div className="cvp-box-child-list" onClick={handleShowModal}>
-        <div className="thut-le cvp-title">
+      <div className="cvp-box-child-list" >
+        <div className="thut-le cvp-title" onClick={handleShowModal}>
           <span className="title_box">Học vấn</span>
           <button
             className="add-more show-modal-exps"
