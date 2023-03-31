@@ -1,8 +1,32 @@
-import { faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCheckCircle,
+  faTimesCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 const PopupWithDropDown = (props) => {
+  const [input, setInput] = useState([]);
+
+  const handleSave = () => {
+    const newData = {
+      id: 1,
+      input: input,
+      type: "dropdown"
+    };
+    props.onSave(newData);
+  };
+  const handleClose = () => {
+    props.onClose();
+  };
+  const selectChange = (e) => {
+    setInput((prevInput) => [
+      ...prevInput,
+      { name: e.target.name, value: e.target.value },
+    ]);
+  };
+  console.log(input);
   return (
     <div className="modal">
       <Modal show={props.check} onHide={props.handleClose}>
@@ -31,14 +55,15 @@ const PopupWithDropDown = (props) => {
                             <div className="el-select">
                               <select
                                 className="select-dropdown select-dropdown-nomal valid"
-                                name="skill_software[Ms Word]"
+                                name={e}
                                 data-placeholder="Chọn"
                                 aria-invalid="false"
+                                onChange={selectChange}
                               >
                                 {props.evaluateSkill.map((item, index) => (
                                   <option
                                     class="select-dropdown_item"
-                                    value={index}
+                                    value={item}
                                   >
                                     {item}
                                   </option>
@@ -56,7 +81,7 @@ const PopupWithDropDown = (props) => {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={props.handleClose}>
+          <Button variant="secondary" onClick={handleClose}>
             <span>
               <FontAwesomeIcon
                 icon={faTimesCircle}
@@ -65,7 +90,7 @@ const PopupWithDropDown = (props) => {
               Bỏ qua
             </span>
           </Button>
-          <Button variant="primary" onClick={props.handleClose}>
+          <Button variant="primary" onClick={handleSave}>
             <span>
               <FontAwesomeIcon
                 icon={faCheckCircle}

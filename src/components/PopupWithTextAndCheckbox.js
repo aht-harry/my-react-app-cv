@@ -18,7 +18,7 @@ const PopupWithTextAndCheckbox = (props) => {
     props.onSave(newData);
   };
   const handleClose = () => {
-    setData("");
+    //setData("");
     props.onClose();
   };
   const selectChange = (e) => {

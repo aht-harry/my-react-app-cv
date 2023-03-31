@@ -14,6 +14,7 @@ const ComponentWithPopup = (props) => {
     setData(newData);
     handleClose();
   };
+  console.log(data.type);
   return (
     <>
       <div className="cv-part">
@@ -39,25 +40,31 @@ const ComponentWithPopup = (props) => {
           </div>
           <div className="cvp-content">
             {data.id ? (
-              <div className="cvp-box-child">
-                {/* <div className="fieldgroup_controls">
-                      <div
-                        className="remove delete-exp"
-                        title="Xoá"
-                        onClick={() => handleDeleteExperience(exp.id)}
-                      >
-                        Xóa {exp.id}
-                      </div>
-                    </div> */}
-                <div className="tlp-content">
-                  <div className="tlp-content-left">
-                    <p>{data.data.data}</p>
-                    {data.data.input.map((e, i) => (
-                      <p key={i}>{e}</p>
-                    ))}
+              data.type != "dropdown" ? (
+                <div className="cvp-box-child">
+                  <div className="tlp-content">
+                    <div className="tlp-content-left">
+                      {data.data.input.map((e, i) => (
+                        <p key={i}>{e}</p>
+                      ))}
+                      <p>{data.data.data}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <div className="cvp-box-child">
+                  <div className="tlp-content">
+                    <div className="tlp-content-left">
+                      {data.input.map((e, i) => (
+                        <div key={i}>
+                          <p>{e.name}</p>
+                          <p>{e.value}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )
             ) : (
               <span>{props.description}</span>
             )}
@@ -75,7 +82,8 @@ const ComponentWithPopup = (props) => {
       ) : (
         <PopupWithDropDown
           check={show}
-          handleClose={handleClose}
+          onClose={handleClose}
+          onSave={handleSaveData}
           modalTitle={props.modalTitle}
           listSkillDropDown={props.listSkillDropDown}
           evaluateSkill={props.evaluateSkill}
