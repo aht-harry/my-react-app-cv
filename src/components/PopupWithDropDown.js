@@ -21,12 +21,15 @@ const PopupWithDropDown = (props) => {
     props.onClose();
   };
   const selectChange = (e) => {
-    setInput((prevInput) => [
-      ...prevInput,
-      { name: e.target.name, value: e.target.value },
-    ]);
+    setInput((prevInput) => {
+      const newInput = prevInput.filter((item) => item.name !== e.target.name);
+      if (e.target.value !== "Chọn" ) {
+        newInput.push({ name: e.target.name, value: e.target.value });
+      }
+      return newInput;
+    });
   };
-  console.log(input);
+
   return (
     <div className="modal">
       <Modal show={props.check} onHide={props.handleClose}>
@@ -59,13 +62,20 @@ const PopupWithDropDown = (props) => {
                                 data-placeholder="Chọn"
                                 aria-invalid="false"
                                 onChange={selectChange}
+                                defaultValue={
+                                  input.some((item) => item.name === e) ? 
+                                    input.find((item) => item.name === e).value : 
+                                    ''
+                                }
                               >
                                 {props.evaluateSkill.map((item, index) => (
+                                  
                                   <option
                                     class="select-dropdown_item"
                                     value={item}
+                                    
                                   >
-                                    {item}
+                                    {item} 
                                   </option>
                                 ))}
                               </select>

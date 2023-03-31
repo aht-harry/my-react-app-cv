@@ -14,7 +14,6 @@ const ComponentWithPopup = (props) => {
     setData(newData);
     handleClose();
   };
-  console.log(data.type);
   return (
     <>
       <div className="cv-part">

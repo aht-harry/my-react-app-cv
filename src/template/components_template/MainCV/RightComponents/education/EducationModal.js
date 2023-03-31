@@ -17,7 +17,7 @@ function EducationModal(props) {
 
   const handleSave = () => {
     const newEducation = {
-      id: 1,
+      id: Date.now(),
       school: schoolName,
       department: department,
       certification: certification,
