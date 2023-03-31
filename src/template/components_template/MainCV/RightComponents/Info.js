@@ -7,6 +7,7 @@ import {
   faMarsAndVenus,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
+import { Form } from "react-bootstrap";
 
 const Info = (props) => {
   return (
@@ -19,7 +20,12 @@ const Info = (props) => {
           <div className="ic">
             <p className="ico">
               <FontAwesomeIcon icon={faMarsAndVenus} />
-              <TextEditAble placeholder={"Ngày sinh (dd/mm/yyyy)"} />
+              <Form>
+                <div>
+                  <Form.Check type="radio" name="gender" id="male" label="Nam" value="Nam"/>
+                  <Form.Check type="radio" name="gender" id="female" label="Nữ" value="Nữ"/>
+                </div>
+              </Form>
             </p>
           </div>
           <div className="ic">

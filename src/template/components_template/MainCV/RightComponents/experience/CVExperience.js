@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ExperienceModal from "./ExperienceModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { Col, Row } from "react-bootstrap";
 function CVExperience() {
   const [showModal, setShowModal] = useState(false);
   const [experiences, setExperiences] = useState([]);
@@ -30,7 +31,7 @@ function CVExperience() {
 
   return (
     <div className="cv-part part-kinh-nghiem">
-      <div className="cvp-box-child-list" >
+      <div className="cvp-box-child-list">
         <div className="thut-le cvp-title" onClick={handleShowModal}>
           <span className="title_box">Kinh nghiệm làm việc</span>
           <button className="add-more show-modal-exps">
@@ -60,23 +61,31 @@ function CVExperience() {
                   </div>
                   <div className="tlp-content">
                     <div className="tlp-content-left">
-                      <b className="tag">
-                        {exp.from} - {exp.to}
-                      </b>
-                    </div>
-                    <div className="tlp-content-right">
-                      <div className="box-name-tieu-de">
-                        <p className="name-noi">{exp.company}</p>
-                      </div>
-                      <p>
-                        <b>Vị trí: </b>
-                        <span>{exp.position}</span>
-                      </p>
-                      <p>
-                        <b>Mô tả: </b>
-                        <br />
-                        {exp.description}
-                      </p>
+                      <Row>
+                        <Col md={6}>
+                          <b className="tag">
+                            {exp.from} - {exp.to}
+                          </b>
+                        </Col>
+                        <Col md={6}>
+                          <div className="tlp-content-right">
+                            <div className="box-name-tieu-de">
+                              <p className="name-noi">
+                                <span>{exp.company}</span>
+                              </p>
+                            </div>
+                            <p>
+                              <b>Vị trí: </b>
+                              <span>{exp.position}</span>
+                            </p>
+                            <p>
+                              <b>Mô tả: </b>
+                              <br />
+                              {exp.description}
+                            </p>
+                          </div>
+                        </Col>
+                      </Row>
                     </div>
                   </div>
                 </div>

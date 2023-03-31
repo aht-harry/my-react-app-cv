@@ -81,6 +81,7 @@ span.title_box {
   padding-top: 20px;
 }
 .cv-main {
+  position: relative;
   overflow-x: hidden;
 }
 .cv-main .main-col-left {
@@ -89,6 +90,7 @@ span.title_box {
   display: inline-block;
   margin-right: 0;
   padding: 0 25px;
+  position: relative;
 }
 
 .add-more {
@@ -160,12 +162,104 @@ span.title_box {
 .ic svg path {
   fill: #ff9900;
 }
-.required{
+.required {
   color: red;
 }
-.education_form label{
+.education_form label {
   margin: 5px 0;
 }
-.row-popup{
+.row-popup {
   margin-bottom: 10px;
+}
+.certification > b {
+  color: #ff9900;
+  margin-bottom: 5px;
+  line-height: 28px;
+  font-size: 17px;
+  font-weight: bold;
+  display: inline-block;
+  padding-right: 5px;
+  white-space: break-spaces;
+}
+b.tag {
+  font-weight: normal;
+  width: 140px;
+  white-space: nowrap;
+  text-align: right;
+  color: #7a2f05;
+}
+.name-noi {
+  position: relative;
+  font-size: 17px;
+  font-weight: bold;
+  display: inline-block;
+  padding-right: 5px;
+  white-space: break-spaces;
+  color: #ff9900;
+}
+#anh_bg_4 {
+  width: 100px;
+  height: 150px;
+  display: inline-block;
+  background: url("../src/assets/src/images/2.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: -26px;
+  top: 50%;
+}
+
+#anh_bg_5 {
+  width: 420px;
+  height: 125px;
+  display: inline-block;
+  background: url("../src/assets/src/images/4.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: -30px;
+  bottom: 0;
+}
+#anh_bg_6 {
+  width: 165px;
+  height: 180px;
+  display: inline-block;
+  background: url("../src/assets/src/images/5.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: -25px;
+  bottom: 0;
+}
+#anh_bg_7 {
+  width: 220px;
+  height: 400px;
+  display: inline-block;
+  background: url("../src/assets/src/images/3.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: -21px;
+  top: 0%;
+}
+.tlp-content-left {
+  position: relative;
+}
+.remove.delete-exp {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  z-index: 5;
+}
+.remove.delete-exp .icon-remove {
+  width: 20px;
+  height: 20px;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: red;
+  color: #fff;
 }

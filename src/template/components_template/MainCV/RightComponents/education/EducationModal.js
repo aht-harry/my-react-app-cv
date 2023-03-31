@@ -6,29 +6,38 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Button, Modal, Form, Row, Col } from "react-bootstrap";
 function EducationModal(props) {
-  const [companyName, setCompanyName] = useState("");
-  const [position, setPosition] = useState("");
-  const [fromDate, setFromDate] = useState("");
-  const [toDate, setToDate] = useState("");
+  const [schoolName, setSchoolName] = useState("");
+  const [department, setDepartment] = useState("");
+  const [certification, setCertification] = useState("");
+  const [specialized, setSpecialized] = useState("");
+  const [classification, setClassification] = useState("");
+  const [dateStart, setDateStart] = useState("");
+  const [dateEnd, setDateEnd] = useState("");
   const [description, setDescription] = useState("");
 
   const handleSave = () => {
-    const newExperience = {
+    const newEducation = {
       id: 1,
-      company: companyName,
-      position: position,
-      from: fromDate,
-      to: toDate,
-      description: description,
+      school: schoolName,
+      department: department,
+      certification: certification,
+      specialized: specialized,
+      classification: classification,
+      dateStart: dateStart,
+      dateEnd: dateEnd,
+      description: description
     };
-    props.onSave(newExperience);
+    props.onSave(newEducation);
   };
 
   const handleClose = () => {
-    setCompanyName("");
-    setPosition("");
-    setFromDate("");
-    setToDate("");
+    setSchoolName("");
+    setDepartment("");
+    setCertification("");
+    setSpecialized("");
+    setClassification("");
+    setDateStart("");
+    setDateEnd("");
     setDescription("");
     props.onClose();
   };
@@ -42,7 +51,7 @@ function EducationModal(props) {
         <Form className="education_form">
           <Row className="row-popup">
             <Col md={6}>
-              <Form.Group controlId="companyName">
+              <Form.Group controlId="schoolName">
                 <Form.Label>
                   Trường, trung tâm đào tạo:
                   <span className="required">*</span>
@@ -51,26 +60,26 @@ function EducationModal(props) {
                   type="text"
                   placeholder="Nhập tên"
                   required
-                  value={companyName}
-                  onChange={(e) => setCompanyName(e.target.value)}
+                  value={schoolName}
+                  onChange={(e) => setSchoolName(e.target.value)}
                 />
               </Form.Group>
             </Col>
             <Col md={6}>
-              <Form.Group controlId="companyName">
+              <Form.Group controlId="department">
                 <Form.Label>Khoa đào tạo: </Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Nhập tên khoa"
-                  value={companyName}
-                  onChange={(e) => setCompanyName(e.target.value)}
+                  value={department}
+                  onChange={(e) => setDepartment(e.target.value)}
                 />
               </Form.Group>
             </Col>
           </Row>
           <Row className="row-popup">
             <Col md={12}>
-              <Form.Group controlId="companyName">
+              <Form.Group controlId="certification">
                 <Form.Label>
                   Tên bằng cấp chứng chỉ:
                   <span className="required">*</span>
@@ -79,54 +88,54 @@ function EducationModal(props) {
                   type="text"
                   placeholder="VD: Cử nhân luật, Kỹ sư CNTT, Chứng chỉ nghề điện dân dụng..."
                   required
-                  value={companyName}
-                  onChange={(e) => setCompanyName(e.target.value)}
+                  value={certification}
+                  onChange={(e) => setCertification(e.target.value)}
                 />
               </Form.Group>
             </Col>
           </Row>
           <Row className="row-popup">
             <Col md={6}>
-              <Form.Group controlId="companyName">
+              <Form.Group controlId="specialized">
                 <Form.Label>Chuyên ngành đào tạo:</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="VD: Công nghệ thông tin, Kế toán..."
-                  value={companyName}
-                  onChange={(e) => setCompanyName(e.target.value)}
+                  value={specialized}
+                  onChange={(e) => setSpecialized(e.target.value)}
                 />
               </Form.Group>
             </Col>
             <Col md={6}>
-              <Form.Group controlId="companyName">
+              <Form.Group controlId="classification">
                 <Form.Label>
                   Xếp loại: <span className="required">*</span>
                 </Form.Label>
                 <select
                   className="select-dropdown select-dropdown-nomal valid"
-                  name="skill_software[Ms Word]"
                   data-placeholder="Chọn"
                   aria-invalid="false"
+                  onChange={(e) => setClassification(e.target.value)}
                 >
                   <option class="select-dropdown_item" value="">
                     Chọn xếp loại
                   </option>
-                  <option class="select-dropdown_item" value="">
+                  <option class="select-dropdown_item" value="Yếu">
                     Yếu
                   </option>
-                  <option class="select-dropdown_item" value="">
+                  <option class="select-dropdown_item" value="Trung bình">
                     Trung bình
                   </option>
-                  <option class="select-dropdown_item" value="">
+                  <option class="select-dropdown_item" value="Trung bình / Khá">
                     Trung bình / Khá
                   </option>
-                  <option class="select-dropdown_item" value="">
+                  <option class="select-dropdown_item" value="Khá">
                     Khá
                   </option>
-                  <option class="select-dropdown_item" value="">
+                  <option class="select-dropdown_item" value="Giỏi">
                     Giỏi
                   </option>
-                  <option class="select-dropdown_item" value="">
+                  <option class="select-dropdown_item" value="Xuất sắc">
                     Xuất sắc
                   </option>
                 </select>
@@ -135,39 +144,39 @@ function EducationModal(props) {
           </Row>
           <Row className="row-popup">
             <Col md={6}>
-              <Form.Group controlId="fromDate">
+              <Form.Group controlId="dateStart">
                 <Form.Label>
                   Thời gian bắt đầu: <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="date"
-                  value={fromDate}
-                  onChange={(e) => setFromDate(e.target.value)}
+                  value={dateStart}
+                  onChange={(e) => setDateStart(e.target.value)}
                 />
               </Form.Group>
             </Col>
             <Col md={6}>
-              <Form.Group controlId="toDate">
+              <Form.Group controlId="dateEnd">
                 <Form.Label>
                   Thời gian kết thúc: <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="date"
-                  value={toDate}
-                  onChange={(e) => setToDate(e.target.value)}
+                  value={dateEnd}
+                  onChange={(e) => setDateEnd(e.target.value)}
                 />
               </Form.Group>
             </Col>
           </Row>
           <Row className="row-popup">
             <Col md={12}>
-              <Form.Group controlId="companyName">
+              <Form.Group controlId="description">
                 <Form.Label>Mô tả thêm:</Form.Label>
                 <Form.Control
                   as="textarea"
                   rows={3}
-                  value={companyName}
-                  onChange={(e) => setCompanyName(e.target.value)}
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
                 />
               </Form.Group>
             </Col>

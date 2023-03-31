@@ -26,6 +26,9 @@ function TemplateCV() {
               </Container>
             </Col>
           </Row>
+          <div id="anh_bg_5"></div>
+          <div id="anh_bg_6"></div>
+          <div id="anh_bg_7"></div>
         </div>
       </Container>
     </div>

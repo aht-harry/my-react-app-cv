@@ -43,6 +43,7 @@ const MainLeft = () => {
   ];
   return (
     <>
+      <div id="anh_bg_4"></div>
       <div className="row-left muc-tieu-nghe-nghiep">
         <ComponentWithPopup
           titleComponent={"mục tiêu nghề nghiệp"}
