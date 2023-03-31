@@ -19,7 +19,7 @@ const Top = () => {
   return (
     <div className="cv-chia-cot dong-top">
       <div id="anh_bg_2"></div>
-      <div id="anh_bg_1"></div>
+      {/* <div id="anh_bg_1"></div> */}
       <div className="cv-cot-trai">
         <div className="avatar-user" data-toggle="tooltip" title="Chọn avatar">
           <div className="box-dm">
