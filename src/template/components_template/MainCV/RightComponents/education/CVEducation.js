@@ -4,6 +4,8 @@ import Button from "react-bootstrap/Button";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import EducationModal from "./EducationModal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 function CVEducation() {
   const [showModal, setShowModal] = useState(false);
   const [experiences, setExperiences] = useState([]);
@@ -28,14 +30,19 @@ function CVEducation() {
 
   return (
     <div className="cv-part part-kinh-nghiem">
-      <div className="cvp-box-child-list">
+      <div className="cvp-box-child-list" onClick={handleShowModal}>
         <div className="thut-le cvp-title">
           <span className="title_box">Học vấn</span>
           <button
             className="add-more show-modal-exps"
-            onClick={handleShowModal}
           >
-            Thêm mới
+            <span
+              data-toggle="tooltip"
+              data-placement="top"
+              data-original-title="Thêm"
+            >
+              <FontAwesomeIcon icon={faPlus} />
+            </span>
           </button>
         </div>
         <div className="thut-le cvp-content">
@@ -92,10 +99,23 @@ function CVEducation() {
             ))
           ) : (
             <div
-              id="no-content-exp"
-              className="exp-content ctbx text-center pt-15 show-modal-exps"
+              id="no-content-certs"
+              class="exp-content show-modal-certs ctbx text-left"
+              style={{color: "rgb(153, 153, 153)"}}
             >
-              Chưa cập nhật thông tin
+              Cử nhân
+              <br />
+              Trường/nơi đào tạo: Đại học Công nghiệp Hà Nội
+              <br />
+              Xếp loại: Khá
+              <br />
+              Khoa: Kế toán
+              <br />
+              Mô tả:
+              <br />
+              Được đào tạo các nghiệp vụ chuyên ngành kế toán
+              <br />
+              Đạt nhiều thành tích trong học tập, học bổng hàng năm
             </div>
           )}
         </div>

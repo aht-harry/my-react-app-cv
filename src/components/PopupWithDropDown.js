@@ -1,3 +1,5 @@
+import { faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 const PopupWithDropDown = (props) => {
@@ -8,7 +10,7 @@ const PopupWithDropDown = (props) => {
           <Modal.Title>{props.modalTitle}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="modal-body">
+          <div className="modal-main">
             <div className="el-dialog__body">
               <form
                 id="m-skill-software"
@@ -55,10 +57,22 @@ const PopupWithDropDown = (props) => {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={props.handleClose}>
-            Bỏ qua
+            <span>
+              <FontAwesomeIcon
+                icon={faTimesCircle}
+                style={{ marginRight: "5px" }}
+              />
+              Bỏ qua
+            </span>
           </Button>
           <Button variant="primary" onClick={props.handleClose}>
-            Cập nhật
+            <span>
+              <FontAwesomeIcon
+                icon={faCheckCircle}
+                style={{ marginRight: "5px" }}
+              />
+              Cập nhật
+            </span>
           </Button>
         </Modal.Footer>
       </Modal>

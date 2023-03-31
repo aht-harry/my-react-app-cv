@@ -37,46 +37,88 @@
   }
 }
 
-
 @font-face {
-  font-family: 'SF Pro Display';
-  src: url('https://fonts.cdnfonts.com/sf-pro-display') format('opentype');
+  font-family: "SF Pro Display";
+  src: url("https://fonts.cdnfonts.com/sf-pro-display") format("opentype");
   font-weight: bold;
   font-style: normal;
 }
 
 body {
-  font-family: 'SF Pro Display', sans-serif;
+  font-family: "SF Pro Display", sans-serif;
   font-size: 14px;
 }
 
-.cv-content{
+.cv-content {
   text-align: left;
 }
-.TextEditAble{
+.TextEditAble {
   display: block;
   text-align: left;
   width: 100%;
 }
-.TextEditAble:hover,.TextEditAble:focus {
+.TextEditAble:hover,
+.TextEditAble:focus {
   outline: #77a5cc dashed 1pt;
 }
-span.title_box{
+span.title_box {
   text-transform: uppercase;
   font-weight: bold;
   color: #b66d3a;
-    font-size: 20px;
+  font-size: 20px;
 }
 /* style modal */
 
-.modal-body label{
+.modal-body label {
   display: inline;
   padding-left: 0.5em;
 }
-.modal-body textarea{
+.modal-body textarea {
   width: 100%;
 }
 
-.row-left{
-  margin-bottom: 20px;
+.row-left {
+  padding-top: 20px;
+}
+.cv-main {
+  overflow-x: hidden;
+}
+.cv-main .main-col-left {
+  background: #f9f4f0;
+  padding-bottom: 35px;
+  display: inline-block;
+  margin-right: 0;
+  padding: 0 25px;
+}
+
+.add-more {
+  border: none;
+  background: #e7e1e1;
+  height: 22px;
+  width: 22px;
+  top: 5px;
+  margin-left: 20px;
+  border-radius: 100%;
+  color: #d73015;
+  font-size: 12px;
+  line-height: 8px;
+}
+.cvp-content > span {
+  color: #b9b1b1;
+}
+.el-checkbox-group {
+  margin: 5px 0;
+}
+.el-form--label-top .el-form-item__label {
+  float: none;
+  display: inline-block;
+  text-align: left;
+  padding: 0 0 5px;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+.el-form-item__content {
+  position: relative;
+  font-size: 14px;
+  margin-bottom: 15px;
 }

@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import PopupWithDropDown from "./PopupWithDropDown";
 import PopupWithTextAndCheckbox from "./PopupWithTextAndCheckbox";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+
+
 
 const ComponentWithPopup = (props) => {
   const [show, setShow] = useState(false);
@@ -29,7 +33,7 @@ const ComponentWithPopup = (props) => {
                   data-placement="top"
                   data-original-title="Thêm"
                 >
-                  <i className="fa fa-plus"></i>
+                  <FontAwesomeIcon icon={faPlus} />
                 </span>
               </button>
             ) : (
