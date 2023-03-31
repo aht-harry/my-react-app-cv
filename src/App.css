@@ -283,6 +283,8 @@ ul li{
 .giai-thuong .cvp-content,
 .chung-chi .cvp-content,
 .ky-nang .cvp-content,
+.tin-hoc .cvp-content,
+.ngoai-ngu .cvp-content,
 .muc-tieu-nghe-nghiep .cvp-content,
 .main-col-right .cv-part .cvp-content{
   padding-left: 15px;
@@ -298,4 +300,21 @@ ul li{
 }
 .main-col-right .part-kinh-nghiem .tlp-content-left{
   padding-left: 7px;
+}
+
+.ngoai-ngu .tlp-content-left>div,
+.tin-hoc .tlp-content-left>div{
+  display: flex;
+}
+.tin-hoc .tlp-content-left>div p,
+.ngoai-ngu .tlp-content-left>div p{
+  margin: 0;
+}
+.tin-hoc .tlp-content-left>div>p,
+.ngoai-ngu .tlp-content-left>div>p{
+  margin-right: 5px;
+}
+
+.card{
+  border: none;
 }
