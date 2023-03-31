@@ -11,10 +11,9 @@ const ComponentWithPopup = (props) => {
   const [data, setData] = useState([]);
 
   const handleSaveData = (newData) => {
-    setData([...data, newData]);
+    setData(newData);
     handleClose();
   };
-  console.log(data)
   return (
     <>
       <div className="cv-part">
@@ -39,11 +38,9 @@ const ComponentWithPopup = (props) => {
             )}
           </div>
           <div className="cvp-content">
-            {
-              (data.length > 0) ? (
-                data.map((item,index) => (
-                  <div key={index} className="cvp-box-child">
-                    {/* <div className="fieldgroup_controls">
+            {data.id ? (
+              <div className="cvp-box-child">
+                {/* <div className="fieldgroup_controls">
                       <div
                         className="remove delete-exp"
                         title="Xoá"
@@ -52,20 +49,18 @@ const ComponentWithPopup = (props) => {
                         Xóa {exp.id}
                       </div>
                     </div> */}
-                    <div className="tlp-content">
-                      <div className="tlp-content-left">
-                          <p>{item.data.data}</p>
-                          {item.data.input.map((e,i)=>(
-                            <p key={i}>{e}</p>
-                          ))}
-                      </div>
-                    </div>
+                <div className="tlp-content">
+                  <div className="tlp-content-left">
+                    <p>{data.data.data}</p>
+                    {data.data.input.map((e, i) => (
+                      <p key={i}>{e}</p>
+                    ))}
                   </div>
-                ))
-              ) : (
-                <span>{props.description}</span>
-              )
-            }
+                </div>
+              </div>
+            ) : (
+              <span>{props.description}</span>
+            )}
           </div>
         </div>
       </div>

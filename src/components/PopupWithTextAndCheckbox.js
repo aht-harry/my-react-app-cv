@@ -9,7 +9,6 @@ const PopupWithTextAndCheckbox = (props) => {
   const[input,setInput] = useState([]);
 
   const handleSave = () => {
-    console.log(input);
     const newData = {
       id: 1,
       data: {
