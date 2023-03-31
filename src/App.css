@@ -209,7 +209,7 @@ b.tag {
   top: 50%;
 }
 
-#anh_bg_5 {
+/* #anh_bg_5 {
   width: 420px;
   height: 125px;
   display: inline-block;
@@ -219,7 +219,8 @@ b.tag {
   position: absolute;
   left: -30px;
   bottom: 0;
-}
+  z-index: -1;
+} */
 #anh_bg_6 {
   width: 165px;
   height: 180px;
@@ -230,6 +231,7 @@ b.tag {
   position: absolute;
   right: -25px;
   bottom: 0;
+  z-index: -1;
 }
 #anh_bg_7 {
   width: 220px;
@@ -241,6 +243,7 @@ b.tag {
   position: absolute;
   right: -21px;
   top: 0%;
+  z-index: -1;
 }
 .tlp-content-left {
   position: relative;
@@ -262,4 +265,37 @@ b.tag {
   border-radius: 50%;
   background: red;
   color: #fff;
+}
+.thut-le.cvp-content{
+  position: relative;
+}
+.cvp-content{
+  position: relative;
+}
+ul{
+  margin-top: 5px;
+  margin-bottom: 0;
+  padding-left: 15px;
+}
+ul li{
+  margin-bottom: 5px;
+}
+.giai-thuong .cvp-content,
+.chung-chi .cvp-content,
+.ky-nang .cvp-content,
+.muc-tieu-nghe-nghiep .cvp-content,
+.main-col-right .cv-part .cvp-content{
+  padding-left: 15px;
+}
+.main-col-right .part-kinh-nghiem .cvp-content{
+  padding-left: 7px;
+}
+.main-col-right .cv-part.info .cvp-content{
+  padding-left: 12px;
+}
+.main-col-right .thut-le.cvp-content>.cvp-content{
+  padding: 0;
+}
+.main-col-right .part-kinh-nghiem .tlp-content-left{
+  padding-left: 7px;
 }

@@ -11,7 +11,7 @@ function ExperienceModal(props) {
 
   const handleSave = () => {
     const newExperience = {
-      id: 1,
+      id: Date.now(),
       company: companyName,
       position: position,
       from: fromDate,

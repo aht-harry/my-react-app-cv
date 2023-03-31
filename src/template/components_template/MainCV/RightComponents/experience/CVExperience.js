@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ExperienceModal from "./ExperienceModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { Col, Row } from "react-bootstrap";
 function CVExperience() {
   const [showModal, setShowModal] = useState(false);
@@ -23,45 +23,76 @@ function CVExperience() {
     setExperiences(experiences.filter((exp) => exp.id !== id));
   };
 
-  const handleUpdateExperience = (id, updatedExperience) => {
-    setExperiences(
-      experiences.map((exp) => (exp.id === id ? updatedExperience : exp))
-    );
+  const [isHovering, setIsHovering] = useState(false);
+  const [isHoveringDelete, setIsHoveringDelete] = useState(false);
+
+  const handleMouseOver = () => {
+    setIsHovering(true);
   };
 
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
+  const handleMouseOverDelete = () => {
+    setIsHoveringDelete(true);
+  };
+
+  const handleMouseOutDelete = () => {
+    setIsHoveringDelete(false);
+  };
   return (
     <div className="cv-part part-kinh-nghiem">
       <div className="cvp-box-child-list">
-        <div className="thut-le cvp-title" onClick={handleShowModal}>
+        <div
+          className="thut-le cvp-title"
+          onClick={handleShowModal}
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
+        >
           <span className="title_box">Kinh nghiệm làm việc</span>
-          <button className="add-more show-modal-exps">
-            <FontAwesomeIcon icon={faPlus} />
-          </button>
+          {isHovering ? (
+            <button
+              className="add-more"
+              style={{ position: "relative", top: "-3px", right: "-15px" }}
+            >
+              <span
+                data-toggle="tooltip"
+                data-placement="top"
+                data-original-title="Thêm"
+              >
+                <FontAwesomeIcon icon={faPlus} />
+              </span>
+            </button>
+          ) : (
+            ""
+          )}
         </div>
         <div className="thut-le cvp-content">
           {experiences.length > 0 ? (
             experiences.map((exp) => (
               <div key={exp.id} className="cvp-content">
                 <div className="cvp-box-child">
-                  <div className="fieldgroup_controls">
-                    <div
-                      className="clone edit-exp"
-                      title="Sửa"
-                      onClick={() => setShowModal(true)}
-                    >
-                      <i className="fa fa-edit"></i>
-                    </div>
-                    <div
-                      className="remove delete-exp"
-                      title="Xoá"
-                      onClick={() => handleDeleteExperience(exp.id)}
-                    >
-                      Xóa {exp.id}
-                    </div>
-                  </div>
                   <div className="tlp-content">
+                    {isHoveringDelete ? (
+                      <div
+                        className="remove delete-exp"
+                        title="Xoá"
+                        onClick={() => handleDeleteExperience(exp.id)}
+                        onMouseOver={handleMouseOverDelete}
+                        onMouseOut={handleMouseOutDelete}
+                      >
+                        <div className="icon-remove">
+                          <FontAwesomeIcon icon={faXmark} />
+                        </div>
+                      </div>
+                    ) : (
+                      ""
+                    )}
                     <div className="tlp-content-left">
-                      <Row>
+                      <Row
+                        onMouseOver={handleMouseOverDelete}
+                        onMouseOut={handleMouseOutDelete}
+                      >
                         <Col md={6}>
                           <b className="tag">
                             {exp.from} - {exp.to}

@@ -11,7 +11,7 @@ const PopupWithDropDown = (props) => {
 
   const handleSave = () => {
     const newData = {
-      id: 1,
+      id: Date.now(),
       input: input,
       type: "dropdown"
     };
@@ -29,7 +29,6 @@ const PopupWithDropDown = (props) => {
       return newInput;
     });
   };
-
   return (
     <div className="modal">
       <Modal show={props.check} onHide={props.handleClose}>
@@ -46,7 +45,7 @@ const PopupWithDropDown = (props) => {
               >
                 <div className="list-skill-software">
                   {props.listSkillDropDown.map((e, i) => (
-                    <div className="list-item row">
+                    <div key={i} className="list-item row">
                       <div className="col-6">
                         <div className="el-form-item is-required">
                           <label className="el-form-item__label">{e}</label>
@@ -73,7 +72,7 @@ const PopupWithDropDown = (props) => {
                                   <option
                                     class="select-dropdown_item"
                                     value={item}
-                                    
+                                    key={index}
                                   >
                                     {item} 
                                   </option>

@@ -5,7 +5,7 @@ const ComponentWithTextEditAble = (props) => {
     <div className="cv-part">
       <div className="cvp-box-child-list">
         <div className="cvp-title">
-          <span class="title_box">{props.titleComponent}</span>
+          <span className="title_box">{props.titleComponent}</span>
         </div>
         <div className="cvp-content">
             <TextEditAble placeholder={props.placeholder} />
