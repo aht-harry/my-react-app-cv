@@ -41,28 +41,33 @@ const ComponentWithPopup = (props) => {
             )}
           </div>
           <div className="cvp-content">
-            {data.length > 0 ? (
-              data.map((item) => (
-                <div key={item.id} className="cvp-box-child">
-                  {/* <div className="fieldgroup_controls">
-                    <div
-                      className="remove delete-exp"
-                      title="Xoá"
-                      onClick={() => handleDeleteExperience(exp.id)}
-                    >
-                      Xóa {exp.id}
-                    </div>
-                  </div> */}
-                  <div className="tlp-content">
-                    <div className="tlp-content-left">
-                        <p>{item.data}</p>
-                    </div>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <span>{props.description}</span>
-            )}
+            {
+
+              console.log(data)
+            // (data.length > 0) ? (
+              
+            //   data.map((item,index) => (
+            //     <div key={index} className="cvp-box-child">
+            //       {/* <div className="fieldgroup_controls">
+            //         <div
+            //           className="remove delete-exp"
+            //           title="Xoá"
+            //           onClick={() => handleDeleteExperience(exp.id)}
+            //         >
+            //           Xóa {exp.id}
+            //         </div>
+            //       </div> */}
+            //       <div className="tlp-content">
+            //         <div className="tlp-content-left">
+            //             <p>{item.data}</p>
+            //         </div>
+            //       </div>
+            //     </div>
+            //   ))
+            // ) : (
+            //   <span>{props.description}</span>
+            // )
+          }
           </div>
         </div>
       </div>
