@@ -12,22 +12,31 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <Container fluid>
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/">Brand</Navbar.Brand>
+    <div className="bg-light">
+    <Container className="mb-3">
+      <Navbar expand="lg">
+        <Link to="/" className="nav-link">
+        <img
+          src={logo} // Use the imported logo image as the source
+          alt="My logo" // Add alt text for accessibility
+          height="45" // Set the height of the logo
+          className="d-inline-block align-top mr-5" // Add Bootstrap classes for styling
+        />
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
+        <Navbar.Collapse id="basic-navbar-nav" className="">
+          <Nav >
             <Link to="/" className="nav-link">
               Home
             </Link>
-            <Link to="/a" className="nav-link">
-              a
+            <Link to="/cv" className="nav-link">
+              Tạo CV
             </Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
     </Container>
+    </div>
   );
 };
 

@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 import LoginSignUp from './login/login';
 import Header from './main/header';
 import Footer from './main/footer';
+import Contact from './pages/contact';
  
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         
         <Route path='/' element={<LoginSignUp />}/>
 
-        <Route path='/a' element={<PdfComponent />}/>
+        <Route path='/cv' element={<PdfComponent />}/>
+        <Route path='/contact' element={<Contact />} />
       </Routes>
       <Footer />
     </div>
