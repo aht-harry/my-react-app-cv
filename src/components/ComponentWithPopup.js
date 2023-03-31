@@ -70,7 +70,7 @@ const ComponentWithPopup = (props) => {
                     <div className="tlp-content-left">
                       {data.input.map((e, i) => (
                         <div key={i}>
-                          <p>{e.name}</p>
+                          <p>{e.name}:</p>
                           <p>{e.value}</p>
                         </div>
                       ))}

@@ -38,7 +38,7 @@ const MainLeft = () => {
     "Chọn",
     "Sơ cấp",
     "Trung cấp",
-    "Cap cấp",
+    "Cao cấp",
     "Bản ngữ",
   ];
   return (
@@ -69,6 +69,7 @@ const MainLeft = () => {
           listSkillDropDown={listSkillDropDown}
           evaluateSkill={evaluateSkill}
           icon={true}
+          description={"Word: Giỏi"}
         />
       </div>
       <div className="row-left ngoai-ngu">
@@ -78,6 +79,7 @@ const MainLeft = () => {
           listSkillDropDown={foreignLanguages}
           evaluateSkill={evaluateLanguages}
           icon={true}
+          description={"Tiếng Anh: Giỏi"}
         />
       </div>
       <div className="row-left giai-thuong">
