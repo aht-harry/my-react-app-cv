@@ -7,24 +7,26 @@ import MainRight from "./components_template/MainCV/MainRight";
 function TemplateCV() {
   return (
     <div className="cv-content">
-      <Top />
       <Container>
-        <Row>
-          <Col md={4}>
-            <Container>
-              <Row>
-                <MainLeft />
-              </Row>
-            </Container>
-          </Col>
-          <Col md={8}>
-            <Container>
-              <Row>
-                <MainRight />
-              </Row>
-            </Container>
-          </Col>
-        </Row>
+        <Top />
+        <div className="cv-main">
+          <Row>
+            <Col md={4} className="main-col-left">
+              <Container>
+                <Row>
+                  <MainLeft />
+                </Row>
+              </Container>
+            </Col>
+            <Col md={8} className="main-col-right">
+              <Container>
+                <Row>
+                  <MainRight />
+                </Row>
+              </Container>
+            </Col>
+          </Row>
+        </div>
       </Container>
     </div>
   );

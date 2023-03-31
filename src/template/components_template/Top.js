@@ -17,51 +17,60 @@ const Top = () => {
   };
 
   return (
-    <Container>
-      <Row>
-        <Col md={4}>
-          <div data-toggle="tooltip" title="" data-original-title="Chọn avatar">
-            <div id="click_upload" style={{ width: "200px", height: "200px" }}>
-              <input
-                type="file"
-                style={{ display: "none" }}
-                onChange={handleImageChange}
-                id="avatar-file-input"
-              />
-              <label htmlFor="avatar-file-input">
-                <img
-                  src={selectedImage}
-                  style={{ width: "200px", height: "200px" }}
-                  id="cvo-profile-avatar"
-                  alt="Avatar"
+    <div className="cv-chia-cot dong-top">
+      <div id="anh_bg_2"></div>
+      <div id="anh_bg_1"></div>
+      <div className="cv-cot-trai">
+        <div className="avatar-user" data-toggle="tooltip" title="Chọn avatar">
+          <div className="box-dm">
+            <div className="wimgS">
+              <div className="box-imgupload" style={{ position: "relative" }}>
+                <input
+                  type="file"
+                  style={{ display: "none" }}
+                  onChange={handleImageChange}
+                  id="avatar-file-input"
                 />
-                <div className="icon-pic">
-                  <i className="fa fa-camera"></i>
-                </div>
-              </label>
+                <label htmlFor="avatar-file-input">
+                  <img
+                    src={selectedImage}
+                    style={{
+                      width: "200px",
+                      height: "200px",
+                      borderRadius: "50%",
+                    }}
+                    id="cvo-profile-avatar"
+                    alt="Avatar"
+                  />
+                  <div className="icon-pic">
+                    <i className="fa fa-camera"></i>
+                  </div>
+                </label>
+              </div>
             </div>
           </div>
-        </Col>
-        <Col md={8}>
-          <div className="box-ten">
-            <div>
-              <TextEditAble
-                id={"cv-profile-fullname"}
-                placeholder={"Tên của bạn"}
-                title={"Tên của bạn"}
-              />
-            </div>
-            <div>
-              <TextEditAble
-                id={"cv-profile-job"}
-                placeholder={"Vị trí công việc bạn muốn ứng tuyển"}
-                title={"Vị trí công việc bạn muốn ứng tuyển"}
-              />
-            </div>
+        </div>
+      </div>
+      <div className="cv-cot-phai">
+        <div className="box-ten">
+          <div>
+            <TextEditAble
+              id={"cv-profile-fullname"}
+              placeholder={"Tên của bạn"}
+              title={"Tên của bạn"}
+            />
           </div>
-        </Col>
-      </Row>
-    </Container>
+          <div>
+            <TextEditAble
+              id={"cv-profile-job"}
+              placeholder={"Vị trí công việc bạn muốn ứng tuyển"}
+              title={"Vị trí công việc bạn muốn ứng tuyển"}
+            />
+          </div>
+        </div>
+      </div>
+      <div id="anh_bg_3"></div>
+    </div>
   );
 };
 export default Top;

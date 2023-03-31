@@ -1,3 +1,6 @@
+body{
+    overflow-x: hidden;
+}
 .dong-top{
     background: #fff2e2;
     height: 300px;
@@ -29,7 +32,6 @@
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 1;
 }
 #click_upload{
     margin-left: 70px;

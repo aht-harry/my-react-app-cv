@@ -67,6 +67,7 @@ const MainLeft = () => {
           modalTitle={"Thêm mới kỹ năng"}
           listSkillDropDown={listSkillDropDown}
           evaluateSkill={evaluateSkill}
+          icon={true}
         />
       </div>
       <div className="row-left ngoai-ngu">
@@ -75,6 +76,7 @@ const MainLeft = () => {
           modalTitle={"Thêm mới ngoại ngữ"}
           listSkillDropDown={foreignLanguages}
           evaluateSkill={evaluateLanguages}
+          icon={true}
         />
       </div>
       <div className="row-left giai-thuong">

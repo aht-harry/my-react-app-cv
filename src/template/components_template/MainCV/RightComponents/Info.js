@@ -1,4 +1,12 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TextEditAble from "../../../../components/TextEditAble";
+import {
+  faCalendar,
+  faEnvelope,
+  faMapMarkerAlt,
+  faMarsAndVenus,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Info = (props) => {
   return (
@@ -10,25 +18,31 @@ const Info = (props) => {
         <div className="cvp-content">
           <div className="ic">
             <p className="ico">
-              <i className="change-color fa fa-calendar"></i>
+              <FontAwesomeIcon icon={faMarsAndVenus} />
               <TextEditAble placeholder={"Ngày sinh (dd/mm/yyyy)"} />
             </p>
           </div>
           <div className="ic">
             <p className="ico">
-              <i className="change-color fa fa-calendar"></i>
+              <FontAwesomeIcon icon={faCalendar} />
+              <TextEditAble placeholder={"Ngày sinh (dd/mm/yyyy)"} />
+            </p>
+          </div>
+          <div className="ic">
+            <p className="ico">
+              <FontAwesomeIcon icon={faPhone} />
               <TextEditAble placeholder={"Điện thoại"} />
             </p>
           </div>
           <div className="ic">
             <p className="ico">
-              <i className="change-color fa fa-calendar"></i>
+              <FontAwesomeIcon icon={faEnvelope} />
               <TextEditAble placeholder={"Email liên hệ"} />
             </p>
           </div>
           <div className="ic">
             <p className="ico">
-              <i className="change-color fa fa-calendar"></i>
+              <FontAwesomeIcon icon={faMapMarkerAlt} />
               <TextEditAble placeholder={"Địa chỉ cá nhân"} />
             </p>
           </div>

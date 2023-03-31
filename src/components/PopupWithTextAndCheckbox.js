@@ -1,3 +1,5 @@
+import { faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
@@ -55,10 +57,22 @@ const PopupWithTextAndCheckbox = (props) => {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Bỏ qua
+            <span>
+              <FontAwesomeIcon
+                icon={faTimesCircle}
+                style={{ marginRight: "5px" }}
+              />
+              Bỏ qua
+            </span>
           </Button>
           <Button variant="primary" onClick={handleSave}>
-            Thêm mới
+            <span>
+              <FontAwesomeIcon
+                icon={faCheckCircle}
+                style={{ marginRight: "5px" }}
+              />
+              Thêm mới
+            </span>
           </Button>
         </Modal.Footer>
       </Modal>

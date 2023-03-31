@@ -4,6 +4,8 @@ import Button from "react-bootstrap/Button";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import ExperienceModal from "./ExperienceModal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 function CVExperience() {
   const [showModal, setShowModal] = useState(false);
   const [experiences, setExperiences] = useState([]);
@@ -28,14 +30,11 @@ function CVExperience() {
 
   return (
     <div className="cv-part part-kinh-nghiem">
-      <div className="cvp-box-child-list">
+      <div className="cvp-box-child-list" onClick={handleShowModal}>
         <div className="thut-le cvp-title">
           <span className="title_box">Kinh nghiệm làm việc</span>
-          <button
-            className="add-more show-modal-exps"
-            onClick={handleShowModal}
-          >
-            Thêm mới
+          <button className="add-more show-modal-exps">
+            <FontAwesomeIcon icon={faPlus} />
           </button>
         </div>
         <div className="thut-le cvp-content">
