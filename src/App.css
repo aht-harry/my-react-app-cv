@@ -76,3 +76,7 @@ span.title_box{
 .modal-body textarea{
   width: 100%;
 }
+
+.row-left{
+  margin-bottom: 20px;
+}

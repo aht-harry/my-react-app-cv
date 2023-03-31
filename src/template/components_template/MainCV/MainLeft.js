@@ -43,7 +43,7 @@ const MainLeft = () => {
   ];
   return (
     <>
-      <div className="muc-tieu-nghe-nghiep">
+      <div className="row-left muc-tieu-nghe-nghiep">
         <ComponentWithPopup
           titleComponent={"mục tiêu nghề nghiệp"}
           description={"Chọn mục tiêu nghề nghiệp"}
@@ -52,7 +52,7 @@ const MainLeft = () => {
           stylePopup={"textandcheckbox"}
         />
       </div>
-      <div className="ky-nang">
+      <div className="row-left ky-nang">
         <ComponentWithPopup
           titleComponent={"kỹ năng"}
           description={"Chọn kỹ năng"}
@@ -61,7 +61,7 @@ const MainLeft = () => {
           stylePopup={"textandcheckbox"}
         />
       </div>
-      <div className="tin-hoc">
+      <div className="row-left tin-hoc">
         <ComponentWithPopup
           titleComponent={"tin học"}
           modalTitle={"Thêm mới kỹ năng"}
@@ -69,7 +69,7 @@ const MainLeft = () => {
           evaluateSkill={evaluateSkill}
         />
       </div>
-      <div className="ngoai-ngu">
+      <div className="row-left ngoai-ngu">
         <ComponentWithPopup
           titleComponent={"ngoại ngữ"}
           modalTitle={"Thêm mới ngoại ngữ"}
@@ -77,7 +77,7 @@ const MainLeft = () => {
           evaluateSkill={evaluateLanguages}
         />
       </div>
-      <div className="giai-thuong">
+      <div className="row-left giai-thuong">
         <ComponentWithTextEditAble
           titleComponent={"giải thưởng"}
           placeholder={
@@ -85,7 +85,7 @@ const MainLeft = () => {
           }
         />
       </div>
-      <div className="chung-chi">
+      <div className="row-left chung-chi">
         <ComponentWithTextEditAble
           titleComponent={"chứng chỉ"}
           placeholder={"Toiec 700 điểm"}
