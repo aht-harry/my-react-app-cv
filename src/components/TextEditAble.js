@@ -6,7 +6,7 @@ const TextEditAble = ({ id, placeholder, title }) => {
       id={id}
       placeholder={placeholder}
       data-original-title={title}
-      contenteditable="true"
+      contentEditable="true"
     ></span>
   );
 };

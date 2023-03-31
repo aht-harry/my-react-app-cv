@@ -9,19 +9,30 @@ const ComponentWithPopup = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [data, setData] = useState([]);
+  const [isHovering, setIsHovering] = useState(false);
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
 
   const handleSaveData = (newData) => {
     setData(newData);
     handleClose();
   };
-  console.log(data.type);
   return (
     <>
       <div className="cv-part">
-        <div className="cvp-box-child-list">
+        <div
+          className="cvp-box-child-list"
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
+        >
           <div className="cvp-title" onClick={handleShow}>
             <span className="title_box">{props.titleComponent}</span>
-            {props.icon ? (
+            {isHovering ? (
               <button
                 className="add-more"
                 style={{ position: "relative", top: "-3px", right: "-15px" }}
@@ -44,10 +55,12 @@ const ComponentWithPopup = (props) => {
                 <div className="cvp-box-child">
                   <div className="tlp-content">
                     <div className="tlp-content-left">
-                      {data.data.input.map((e, i) => (
-                        <p key={i}>{e}</p>
-                      ))}
-                      <p>{data.data.data}</p>
+                      <ul>
+                        {data.data.input.map((e, i) => (
+                          <li key={i}>{e}</li>
+                        ))}
+                        {data.data.data ? <li>{data.data.data}</li> : ""}
+                      </ul>
                     </div>
                   </div>
                 </div>

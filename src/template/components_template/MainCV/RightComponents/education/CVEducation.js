@@ -23,33 +23,60 @@ function CVEducation() {
     setEducation(education.filter((exp) => exp.id !== id));
   };
 
-  // const handleUpdateExperience = (id, updatedExperience) => {
-  //   setExperiences(
-  //     experiences.map((exp) => (exp.id === id ? updatedExperience : exp))
-  //   );
-  // };
+  const [isHovering, setIsHovering] = useState(false);
+  const [isHoveringDelete, setIsHoveringDelete] = useState(false);
 
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
+  const handleMouseOverDelete = () => {
+    setIsHoveringDelete(true);
+  };
+
+  const handleMouseOutDelete = () => {
+    setIsHoveringDelete(false);
+  };
   return (
-    <div className="cv-part part-kinh-nghiem">
+    <div className="cv-part part-hoc-van">
       <div className="cvp-box-child-list">
-        <div className="thut-le cvp-title" onClick={handleShowModal}>
+        <div
+          className="thut-le cvp-title"
+          onClick={handleShowModal}
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
+        >
           <span className="title_box">Học vấn</span>
-          <button className="add-more show-modal-exps">
-            <span
-              data-toggle="tooltip"
-              data-placement="top"
-              data-original-title="Thêm"
+          {isHovering ? (
+            <button
+              className="add-more"
+              style={{ position: "relative", top: "-3px", right: "-15px" }}
             >
-              <FontAwesomeIcon icon={faPlus} />
-            </span>
-          </button>
+              <span
+                data-toggle="tooltip"
+                data-placement="top"
+                data-original-title="Thêm"
+              >
+                <FontAwesomeIcon icon={faPlus} />
+              </span>
+            </button>
+          ) : (
+            ""
+          )}
         </div>
         <div className="thut-le cvp-content">
           {education.length > 0 ? (
             education.map((exp) => (
-              <div key={exp.id} className="cvp-content">
+              <div
+                key={exp.id}
+                className="cvp-content"
+                onMouseOver={handleMouseOverDelete}
+                onMouseOut={handleMouseOutDelete}
+              >
                 <div className="cvp-box-child">
-                  <div className="fieldgroup_controls"></div>
                   <div className="tlp-content">
                     <div className="tlp-content-left">
                       <Row>
@@ -64,15 +91,19 @@ function CVEducation() {
                           </b>
                         </Col>
                       </Row>
-                      <div
-                        className="remove delete-exp"
-                        title="Xoá"
-                        onClick={() => handleDeleteEduction(exp.id)}
-                      >
-                        <div className="icon-remove">
-                          <FontAwesomeIcon icon={faXmark} />
+                      {isHoveringDelete ? (
+                        <div
+                          className="remove delete-exp"
+                          title="Xoá"
+                          onClick={() => handleDeleteEduction(exp.id)}
+                        >
+                          <div className="icon-remove">
+                            <FontAwesomeIcon icon={faXmark} />
+                          </div>
                         </div>
-                      </div>
+                      ) : (
+                        ""
+                      )}
                     </div>
                     <div className="tlp-content-right">
                       <p>
@@ -103,7 +134,7 @@ function CVEducation() {
           ) : (
             <div
               id="no-content-certs"
-              class="exp-content show-modal-certs ctbx text-left"
+              className="exp-content show-modal-certs ctbx text-left"
               style={{ color: "rgb(153, 153, 153)" }}
             >
               Cử nhân
