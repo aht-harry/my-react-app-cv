@@ -160,3 +160,12 @@ span.title_box {
 .ic svg path {
   fill: #ff9900;
 }
+.required{
+  color: red;
+}
+.education_form label{
+  margin: 5px 0;
+}
+.row-popup{
+  margin-bottom: 10px;
+}
