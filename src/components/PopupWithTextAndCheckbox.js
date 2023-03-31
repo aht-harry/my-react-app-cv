@@ -4,17 +4,29 @@ import Modal from "react-bootstrap/Modal";
 const PopupWithTextAndCheckbox = (props) => {
   const [data, setData] = useState("");
 
+  const[input,setInput] = useState([]);
+
   const handleSave = () => {
+    console.log(input);
     const newData = {
       id: 1,
-      data: data,
-    };
+      data: {
+        data: data,
+        input: input
+      } }
     props.onSave(newData);
   };
   const handleClose = () => {
     setData("");
     props.onClose();
   };
+  const selectChange = (e) => {
+    if (e.target.checked) {
+      setInput((prevInput) => [...prevInput, e.target.value]);
+    } else {
+      setInput((prevInput) => prevInput.filter((value) => value !== e.target.value));
+    }
+  }
   return (
     <div className="modal">
       <Modal show={props.check} onHide={handleClose}>
@@ -40,7 +52,8 @@ const PopupWithTextAndCheckbox = (props) => {
                           id={i}
                           value={e}
                           class="custom-control-input"
-                          onChange={(e) => console.log(e.target.checked)}
+                          checked={input.includes(e)}
+                          onChange={selectChange}
                         />
                         <label htmlFor={i} class="custom-control-label">
                           {e}
