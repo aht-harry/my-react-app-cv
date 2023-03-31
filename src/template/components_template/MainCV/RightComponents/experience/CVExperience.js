@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import ExperienceModal from "./ExperienceModal";
+
 import "bootstrap/dist/css/bootstrap.min.css";
+import ExperienceModal from "./ExperienceModal";
 function CVExperience() {
   const [showModal, setShowModal] = useState(false);
   const [experiences, setExperiences] = useState([]);

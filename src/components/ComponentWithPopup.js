@@ -6,6 +6,13 @@ const ComponentWithPopup = (props) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [data, setData] = useState([]);
+
+  const handleSaveData = (newData) => {
+    setData([...data, newData]);
+    handleClose();
+  };
+
   return (
     <>
       <div className="cv-part" onClick={handleShow}>
@@ -30,15 +37,48 @@ const ComponentWithPopup = (props) => {
             )}
           </div>
           <div className="cvp-content">
-            <span>{props.description}</span>
+            {data.length > 0 ? (
+              data.map((item) => (
+                <div key={item.id} className="cvp-box-child">
+                  {/* <div className="fieldgroup_controls">
+                    <div
+                      className="remove delete-exp"
+                      title="Xoá"
+                      onClick={() => handleDeleteExperience(exp.id)}
+                    >
+                      Xóa {exp.id}
+                    </div>
+                  </div> */}
+                  <div className="tlp-content">
+                    <div className="tlp-content-left">
+                        <p>{item.data}</p>
+                    </div>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <span>{props.description}</span>
+            )}
           </div>
         </div>
       </div>
-      {props.stylePopup == "textandcheckbox"?
-      <PopupWithTextAndCheckbox check={show} handleClose={handleClose} modalTitle={props.modalTitle} listCheckbox={props.listCheckbox} />
-      :
-      <PopupWithDropDown check={show} handleClose={handleClose} modalTitle={props.modalTitle} listSkillDropDown={props.listSkillDropDown} evaluateSkill={props.evaluateSkill}/>
-      }
+      {props.stylePopup == "textandcheckbox" ? (
+        <PopupWithTextAndCheckbox
+          check={show}
+          onClose={handleClose}
+          onSave={handleSaveData}
+          modalTitle={props.modalTitle}
+          listCheckbox={props.listCheckbox}
+        />
+      ) : (
+        <PopupWithDropDown
+          check={show}
+          handleClose={handleClose}
+          modalTitle={props.modalTitle}
+          listSkillDropDown={props.listSkillDropDown}
+          evaluateSkill={props.evaluateSkill}
+        />
+      )}
     </>
   );
 };

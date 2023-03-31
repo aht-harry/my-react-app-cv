@@ -26,7 +26,21 @@ const MainLeft = () => {
     "Ms Power Point",
     "Ms Outlook",
   ];
-  const evaluateSkill = ["Kém", "Trung bình", "Khá", "Tốt"];
+  const evaluateSkill = ["Chọn", "Kém", "Trung bình", "Khá", "Tốt"];
+  const foreignLanguages = [
+    "Tiếng Anh",
+    "Tiếng Pháp",
+    "Tiếng Nga",
+    "Tiếng Hàn",
+    "Tiếng Trung",
+  ];
+  const evaluateLanguages = [
+    "Chọn",
+    "Sơ cấp",
+    "Trung cấp",
+    "Cap cấp",
+    "Bản ngữ",
+  ];
   return (
     <>
       <div className="muc-tieu-nghe-nghiep">
@@ -47,12 +61,20 @@ const MainLeft = () => {
           stylePopup={"textandcheckbox"}
         />
       </div>
-      <div className="tin-học">
+      <div className="tin-hoc">
         <ComponentWithPopup
           titleComponent={"tin học"}
           modalTitle={"Thêm mới kỹ năng"}
           listSkillDropDown={listSkillDropDown}
           evaluateSkill={evaluateSkill}
+        />
+      </div>
+      <div className="ngoai-ngu">
+        <ComponentWithPopup
+          titleComponent={"ngoại ngữ"}
+          modalTitle={"Thêm mới ngoại ngữ"}
+          listSkillDropDown={foreignLanguages}
+          evaluateSkill={evaluateLanguages}
         />
       </div>
       <div className="giai-thuong">

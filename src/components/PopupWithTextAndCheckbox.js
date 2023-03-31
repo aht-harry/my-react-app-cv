@@ -1,28 +1,50 @@
+import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-const PopupWithTextAndCheckbox = ({
-  check,
-  handleClose,
-  modalTitle,
-  listCheckbox,
-}) => {
+const PopupWithTextAndCheckbox = (props) => {
+  const [data, setData] = useState("");
+
+  const handleSave = () => {
+    const newData = {
+      id: 1,
+      data: data,
+    };
+    props.onSave(newData);
+  };
+  const handleClose = () => {
+    setData("");
+    props.onClose();
+  };
   return (
     <div className="modal">
-      <Modal show={check} onHide={handleClose}>
+      <Modal show={props.check} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{modalTitle}</Modal.Title>
+          <Modal.Title>{props.modalTitle}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="modal-body">
             <div className="el-dialog__body">
-              <textarea rows="5" className="notAuto"></textarea>
+              <textarea
+                rows="5"
+                className="notAuto"
+                value={data}
+                onChange={(e) => setData(e.target.value)}
+              ></textarea>
               <div className="row">
-                {listCheckbox.map((e, i) => (
-                  <div className="col-md-6">
+                {props.listCheckbox.map((e, i) => (
+                  <div key={i} className="col-md-6">
                     <div className="el-checkbox-group">
                       <div className="custom-control custom-checkbox">
-                        <input type="checkbox" id={i} class="custom-control-input"/>
-                        <label for={i} class="custom-control-label">{e}</label>
+                        <input
+                          type="checkbox"
+                          id={i}
+                          value={e}
+                          class="custom-control-input"
+                          onChange={(e) => console.log(e.target.checked)}
+                        />
+                        <label htmlFor={i} class="custom-control-label">
+                          {e}
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -35,7 +57,7 @@ const PopupWithTextAndCheckbox = ({
           <Button variant="secondary" onClick={handleClose}>
             Bỏ qua
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={handleSave}>
             Thêm mới
           </Button>
         </Modal.Footer>
