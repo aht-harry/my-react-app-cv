@@ -1,36 +1,44 @@
-import React from 'react';
-import { MDBInput, MDBCheckbox, MDBBtn, MDBValidation,MDBTextArea, MDBValidationItem } from 'mdb-react-ui-kit';
-
-import '/node_modules/bootstrap/dist/css/bootstrap.min.css';
-
-export default function Contact() {
+import React from 'react'
+const ContactForm = () => {
+  const [formStatus, setFormStatus] = React.useState('Send')
+  const onSubmit = (e) => {
+    e.preventDefault()
+    setFormStatus('Submitting...')
+    const { name, email, message } = e.target.elements
+    let conFom = {
+      name: name.value,
+      email: email.value,
+      message: message.value,
+    }
+    console.log(conFom)
+  }
   return (
-    <MDBValidation noValidate id='form' className='text-center' style={{ width: '100%', maxWidth: '300px' }}>
-      <h2>Contact us</h2>
-
-      <MDBValidationItem invalid feedback='Please provide your name.'>
-        <MDBInput label='Name' v-model='name' wrapperClass='mb-4' required />
-      </MDBValidationItem>
-
-      <MDBValidationItem invalid feedback='Please provide your email.'>
-        <MDBInput type='email' label='Email address' v-model='email' wrapperClass='mb-4' required />
-      </MDBValidationItem>
-
-      <MDBValidationItem invalid feedback='Please provide mail subject.'>
-        <MDBInput label='Subject' v-model='subject' wrapperClass='mb-4' required />
-      </MDBValidationItem>
-
-      <MDBValidationItem invalid feedback='Please provide a message text.'>
-        <MDBTextArea wrapperClass='mb-4' label='Message' required />
-      </MDBValidationItem>
-
-      <MDBValidationItem feedback=''>
-        <MDBCheckbox wrapperClass='d-flex justify-content-center' label='Send me copy' />
-      </MDBValidationItem>
-
-      <MDBBtn type='submit' color='primary' block className='my-4'>
-        Send
-      </MDBBtn>
-    </MDBValidation>
-  );
+    <div className="container mt-5" id='contact'>
+      <h2 className="mb-3">Contact Form</h2>
+      <form onSubmit={onSubmit}>
+        <div className="mb-3">
+          <label className="form-label" htmlFor="name">
+            Name
+          </label>
+          <input className="form-control" type="text" id="name" required />
+        </div>
+        <div className="mb-3">
+          <label className="form-label" htmlFor="email">
+            Email
+          </label>
+          <input className="form-control" type="email" id="email" required />
+        </div>
+        <div className="mb-3">
+          <label className="form-label" htmlFor="message">
+            Message
+          </label>
+          <textarea className="form-control" id="message" required />
+        </div>
+        <button className="btn btn-danger" type="submit">
+          {formStatus}
+        </button>
+      </form>
+    </div>
+  )
 }
+export default ContactForm

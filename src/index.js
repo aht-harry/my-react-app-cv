@@ -6,14 +6,21 @@ import reportWebVitals from './reportWebVitals';
 import LoginSignUp from './login/login';
 import { BrowserRouter } from 'react-router-dom';
 import PdfComponent from './PdfComponent';
-
+import reducer from './redux/reducers';
+import { createStore } from 'redux'
+import { Provider } from 'react-redux';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const store = createStore(reducer)
+
 root.render(
+  <Provider store={store}>
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>
+</Provider>,
+  
 );
 
 // If you want to start measuring performance in your app, pass a function

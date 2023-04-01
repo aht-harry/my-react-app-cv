@@ -12,8 +12,26 @@ import {
   MDBIcon,
   MDBInput,
 } from "mdb-react-ui-kit";
+import { useNavigate  } from "react-router-dom";
+import { setLoginStatus } from "../redux/actions";
+import { useDispatch } from "react-redux";
 
 const LoginSignUp = () => {
+
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
+
+  const handleLogin = () => {
+    if (email === 'example@gmail.com' && password === '12345') {
+      localStorage.setItem('isLogin', true);
+      dispatch(setLoginStatus(true));
+      navigate("/cv");
+    }else{
+      alert('Incorrect em ail or password');
+    }
+  };
   const [key, setKey] = useState("tab1");
 
   return (
@@ -47,24 +65,24 @@ const LoginSignUp = () => {
                       >
                         Đăng nhập
                       </h2>
-
-                      <MDBInput
+                      <MDBInput onChange={(e) => setEmail(e.target.value)}
                         wrapperClass="mb-4"
                         placeholder="Địa chỉ email"
                         id="formControlLg"
                         type="email"
                         size="lg"
                       />
-                      <MDBInput
+                      <MDBInput onChange={(e) => setPassword(e.target.value)}
                         wrapperClass="mb-4"
                         placeholder="Mật khẩu"
                         id="formControlLg"
                         type="password"
                         size="lg"
                       />
-                      <MDBBtn className="mb-4 px-5" color="dark" size="lg">
+                      <MDBBtn  onClick={handleLogin} className="mb-4 px-5" color="dark" size="lg">
                         Đăng nhập
                       </MDBBtn>
+                      
                       <a className="small text-muted" href="#!">
                         Quên mật khẩu?
                       </a>

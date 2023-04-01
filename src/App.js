@@ -7,7 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 import LoginSignUp from './login/login';
 import Header from './main/header';
 import Footer from './main/footer';
-import Contact from './pages/contact';
+import ContactForm from './pages/contact';
  
 function App() {
   return (
@@ -17,9 +17,8 @@ function App() {
       <Routes>
         
         <Route path='/' element={<LoginSignUp />}/>
-
         <Route path='/cv' element={<PdfComponent />}/>
-        <Route path='/contact' element={<Contact />} />
+        <Route path='/contact' element={<ContactForm />} />
       </Routes>
       <Footer />
     </div>

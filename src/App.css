@@ -318,3 +318,7 @@ ul li{
 .card{
   border: none;
 }
+#contact{
+  max-width: 550px;
+  text-align: left;
+}
